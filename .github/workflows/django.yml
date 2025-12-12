@@ -28,7 +28,10 @@ jobs:
       - name: Run Migrations
         run: python manage.py migrate
         working-directory: ./config
-
+        env:
+          DJANGO_SETTINGS_MODULE: config.settings.dev
       - name: Run Tests
         run: python manage.py test
         working-directory: ./config
+        env:
+            DJANGO_SETTINGS_MODULE: config.settings.dev
